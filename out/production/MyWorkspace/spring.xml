@@ -1,0 +1,59 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+    <bean id="triangleOne" class="com.demo.helloSpring.Triangle">
+        <!--<property name="type" value="Equilateral" />-->
+        <constructor-arg value="Right Angled"/>
+        <property name="height" value="15" />
+    </bean>
+
+    <bean id="triangleTwo" class="com.demo.helloSpring.Triangle">
+        <constructor-arg value="Right Angled"/>
+    </bean>
+
+    <bean id="triangleThree" class="com.demo.helloSpring.Triangle">
+        <constructor-arg value="Right Angled"/>
+        <constructor-arg value="25"/>
+    </bean>
+
+    <bean id="pointZero" class="com.demo.helloSpring.Point">
+        <property name="x" value="0" />
+        <property name="y" value="0" />
+    </bean>
+
+
+
+    <bean id="rectangle" class="com.demo.helloSpring.Rectangle">
+        <property name="pointA" ref="pointZero"/>
+
+        <property name="pointB">
+            <bean class="com.demo.helloSpring.Point">
+                <property name="x" value="0" />
+                <property name="y" value="20" />
+            </bean>
+        </property>
+
+        <property name="pointC">
+            <bean class="com.demo.helloSpring.Point">
+                <property name="x" value="20" />
+                <property name="y" value="0" />
+            </bean>
+        </property>
+
+        <property name="pointD">
+            <bean class="com.demo.helloSpring.Point">
+                <property name="x" value="20" />
+                <property name="y" value="20" />
+            </bean>
+        </property>
+    </bean>
+
+</beans>
+
+
+
